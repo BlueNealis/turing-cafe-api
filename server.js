@@ -12,9 +12,14 @@ app.set('port', 3001);
 
 app.locals.title = 'Turing Cafe API'
 app.locals.reservations = reservations;
+app.locals.menu = menu;
 
 app.get('/api/v1/reservations', (request, response) => {
   return response.json(app.locals.reservations)
+});
+
+app.get('/api/v1/menu', (request, response) => {
+  return response.json(app.locals.menu)
 });
 
 app.post('/api/v1/reservations', (request, response) => {
